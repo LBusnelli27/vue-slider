@@ -45,6 +45,7 @@
                                 <span class="my-prev-hook"></span>
                             </div>
                             <!-- immagini interne -->
+                            <img class="img-fluid my-miniature-item" :src="element.src" :alt="element.name" v-for="(element, index) in imageArray" :class="(index == activeElement) ? 'my-opacity-min' : ''">
                             <!-- next -->
                             <div  @click="nextSlide" class="my-next position-absolute">
                                 <span class="my-next-hook"></span>
