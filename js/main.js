@@ -33,13 +33,13 @@ const app = new Vue (
 
         methods : {
             nextSlide (){
-                if (this.activeElement < 4) {
+                if (this.activeElement < this.imageArray.length - 1) {
                     this.activeElement ++;
                     console.warn('Ha fatto ++');
                 }
                 else {
                     this.activeElement = 0;
-                    console.warn('Element = 0');
+                    console.warn('activeElement = 0');
                 }
                 console.log('Hai cliccato next!');
             },
@@ -51,8 +51,8 @@ const app = new Vue (
                     console.warn('Ha fatto --');
                 }
                 else {
-                    this.activeElement = 4;
-                    console.warn('Element = 4');
+                    this.activeElement = this.imageArray.length - 1;
+                    console.warn('activeElement = imageArray.length - 1');
                 }
                 console.log('Hai cliccato next!');
             }
