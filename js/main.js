@@ -1,39 +1,61 @@
-const imageArray = [
-    {
-        src : "img/img-1.jpg",
-        name : "Immagine isola"
-    },
-    {
-        src : "img/img-2.jpg",
-        name : "Immagine deserto"
-    },
-    {
-        src : "img/img-3.jpg",
-        name : "Immagine prateria"
-    },
-    {
-        src : "img/img-4.jpg",
-        name : "Immagine montagne"
-    },
-    {
-        src : "img/img-5.jpg",
-        name : "Immagine lago"
-    }
-]
-
-
 const app = new Vue (
     {
         el : '#app',
 
 
         data : {
+            imageArray : [
+                {
+                    src : "img/img-1.jpg",
+                    name : "Immagine isola"
+                },
+                {
+                    src : "img/img-2.jpg",
+                    name : "Immagine deserto"
+                },
+                {
+                    src : "img/img-3.jpg",
+                    name : "Immagine prateria"
+                },
+                {
+                    src : "img/img-4.jpg",
+                    name : "Immagine montagne"
+                },
+                {
+                    src : "img/img-5.jpg",
+                    name : "Immagine lago"
+                }
+            ],
 
+            activeElement : 0
         },
 
 
         methods : {
-            
+            nextSlide (){
+                if (this.activeElement < 4) {
+                    this.activeElement ++;
+                    console.warn('Ha fatto ++');
+                }
+                else {
+                    this.activeElement = 0;
+                    console.warn('Element = 0');
+                }
+                console.log('Hai cliccato next!');
+            },
+
+            prevSlide : function() 
+            {
+                if (this.activeElement > 0) {
+                    this.activeElement --;
+                    console.warn('Ha fatto --');
+                }
+                else {
+                    this.activeElement = 4;
+                    console.warn('Element = 4');
+                }
+                console.log('Hai cliccato next!');
+            }
         }
     }
 )
@@ -52,7 +74,7 @@ const app = new Vue (
 
 // for (let i = 0; i < imageArray.length; i++) {
 //     imageContainer.innerHTML += `<img class="img-fluid my-carousel-item" src="${imageArray[i].src}" alt="${imageArray[i].name}">`
-    
+
 //     thumbnailContainer.innerHTML += `<img class="my-miniature-item" src="${imageArray[i].src}" alt="${imageArray[i].name}">`
 // }
 

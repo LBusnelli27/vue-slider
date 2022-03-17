@@ -37,15 +37,16 @@
                     <div class="my-carousel-container d-flex flex-column px-5" id="my-carousel">
                         <div class="my-carousel-images">
                             <!-- immagini -->
+                            <img class="img-fluid my-carousel-item" :src="element.src" :alt="element.name" v-for="(element, index) in imageArray" :class="(index == activeElement) ? 'my-active' : ''">
                         </div>
                         <div class="my-thumbnails position-relative">
                             <!-- prev -->
-                            <div class="my-previous position-absolute">
+                            <div @click="prevSlide" class="my-previous position-absolute">
                                 <span class="my-prev-hook"></span>
                             </div>
                             <!-- immagini interne -->
                             <!-- next -->
-                            <div class="my-next position-absolute">
+                            <div  @click="nextSlide" class="my-next position-absolute">
                                 <span class="my-next-hook"></span>
                             </div>
                         </div>
@@ -53,7 +54,7 @@
                 </div>
 
                 <div class="col-12 p-3" id="my-after-carousel">
-
+                    <p>Designed by Busna</p>
                 </div>
             </div>
         </div>
