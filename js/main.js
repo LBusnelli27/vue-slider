@@ -32,7 +32,7 @@ const app = new Vue (
 
 
         methods : {
-            nextSlide (){
+            nextSlide () {
                 if (this.activeElement < this.imageArray.length - 1) {
                     this.activeElement ++;
                     console.warn('Ha fatto ++');
@@ -44,8 +44,7 @@ const app = new Vue (
                 console.log('Hai cliccato next!');
             },
 
-            prevSlide : function() 
-            {
+            prevSlide : function() {
                 if (this.activeElement > 0) {
                     this.activeElement --;
                     console.warn('Ha fatto --');
@@ -57,9 +56,14 @@ const app = new Vue (
                 console.log('Hai cliccato next!');
             },
 
-            clickThumb : function(imgIndex)
-            {
+            clickThumb : function(imgIndex) {
                 this.activeElement = imgIndex;
+            },
+
+            autoPlay : function() {
+                setInterval(() => {
+                    this.nextSlide();
+                }, 3000);
             }
         }
     }

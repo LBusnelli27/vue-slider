@@ -41,7 +41,7 @@
                         </div>
 
 
-                        <div class="my-thumbnails position-relative">
+                        <div class="my-thumbnails position-relative mb-4">
                             <!-- prev -->
                             <div @click="prevSlide" class="my-previous position-absolute">
                                 <span class="my-prev-hook"></span>
@@ -54,6 +54,8 @@
                             </div>
                         </div>
                     </div>
+
+                    <button @click="autoPlay" class="btn btn-dark">Start Autoplay</button>
                 </div>
 
                 <div class="col-12 p-3" id="my-after-carousel">
