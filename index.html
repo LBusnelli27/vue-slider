@@ -39,13 +39,15 @@
                             <!-- immagini -->
                             <img class="img-fluid my-carousel-item" :src="element.src" :alt="element.name" v-for="(element, index) in imageArray" :class="(index == activeElement) ? 'my-active' : ''">
                         </div>
+
+
                         <div class="my-thumbnails position-relative">
                             <!-- prev -->
                             <div @click="prevSlide" class="my-previous position-absolute">
                                 <span class="my-prev-hook"></span>
                             </div>
                             <!-- immagini interne -->
-                            <img class="img-fluid my-miniature-item" :src="element.src" :alt="element.name" v-for="(element, index) in imageArray" :class="(index == activeElement) ? 'my-opacity-min' : ''">
+                            <img @click="clickThumb(index)" class="img-fluid my-miniature-item" :src="element.src" :alt="element.name" v-for="(element, index) in imageArray" :class="(index == activeElement) ? 'my-opacity-min' : ''">
                             <!-- next -->
                             <div  @click="nextSlide" class="my-next position-absolute">
                                 <span class="my-next-hook"></span>
