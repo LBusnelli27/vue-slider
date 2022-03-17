@@ -41,7 +41,6 @@ const app = new Vue (
                     this.activeElement = 0;
                     console.warn('activeElement = 0');
                 }
-                console.log('Hai cliccato next!');
             },
 
             prevSlide : function() {
@@ -53,7 +52,6 @@ const app = new Vue (
                     this.activeElement = this.imageArray.length - 1;
                     console.warn('activeElement = imageArray.length - 1');
                 }
-                console.log('Hai cliccato next!');
             },
 
             clickThumb : function(imgIndex) {
